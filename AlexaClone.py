@@ -2,10 +2,11 @@ import speech_recognition as Sr
 import pyttsx3 
 import datetime
 from winsound import Beep
+from googletrans import Translator
 
 
 global Flag 
-
+translator = Translator()
 Time = datetime.datetime.now()
 #Listener is an object used to parse voice into Text
 listener = Sr.Recognizer()
@@ -41,6 +42,16 @@ def Commands(Text):
             TextToSpeech(f'{RegularTime,Time.minute}')
         else:
             TextToSpeech(f'{Time.hour,Time.minute}')
+    elif 'Translate' in Text:
+        TextToSpeech('What Would you like me to translate')
+        Beep(2000,100)
+        with Sr.Microphone() as source:
+            voice = listener.listen(source)
+            command = listener.recognize_google(voice)
+            print(command)
+            TranslatedText =translator.translate(command,src ='en', dest= 'es') 
+            print(TranslatedText.text)
+            TextToSpeech(TranslatedText.text)
 #Text To Speech Function used to Take text and output speech using the initialized engine from the Pyttsx3 Library      
 def TextToSpeech(Text):
     engine.say(Text)
