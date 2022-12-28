@@ -1,0 +1,23 @@
+{
+    "Commands": [
+    {"tag" : ["Greetings"], 
+    "UserInputs" : ["hello","hey", "whats up luci","hi luci"],
+    "Responses"  : ["Hey there", "what is up", "Hi", "Hello There"]  
+},
+{"tag" : ["GoodByes"],
+"UserInputs" : ["goodBye","goodBye Luci", "see Ya", "later","bye","bye Luci"],
+"Responses"  : [""]
+},
+{"tag" : ["Age"],
+"UserInputs" : ["how old are you", "luci how old are you","when were you created"],
+"Responses"  : ["I am 1 years old", "1 Years old"]
+},
+{"tag" : ["Songs"],
+"UserInputs" : ["luci Play a Song", "play a song", "luci play a random song", "play a random song"],
+"Responses"  : [""]
+},
+{"tag" : ["Options"],
+"UserInputs": ["what time is it","what is the time", "change voice setting", "change voice to female", "change voice to male", "translate", "translate to spanish", "translate this phrase", "translate from english to spanish"]
+,"Responses": ""}
+]
+}
